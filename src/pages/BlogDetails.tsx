@@ -1,38 +1,28 @@
-import React from 'react';
+// BlogDetails.tsx
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import client from '../contentfulClient';
 
 interface Blog {
   title: string;
   content: string;
 }
 
-const sampleBlogs: Record<string, Blog> = {
-  '1': {
-    title: 'Blog Post 1',
-    content: 'This is the full content of blog post 1.',
-  },
-  '2': {
-    title: 'Blog Post 2',
-    content: 'This is the full content of blog post 2.',
-  },
-  '3': {
-    title: 'Blog Post 3',
-    content: 'This is the full content of blog post 3.',
-  },
-};
-
 const BlogDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
+  const [blog, setBlog] = useState<Blog | null>(null);
 
-  if (!id) {
-    return (
-      <div className="container mx-auto p-4">
-        <h1>Blog not found</h1>
-      </div>
-    );
-  }
-
-  const blog = sampleBlogs[id];
+  useEffect(() => {
+    if (id) {
+      client.getEntry(id)
+        .then((entry) => {
+          const title = typeof entry.fields.title === 'string' ? entry.fields.title : 'No Title';
+          const content = typeof entry.fields.description === 'string' ? entry.fields.description : 'No Content';
+          setBlog({ title, content });
+        })
+        .catch(console.error);
+    }
+  }, [id]);
 
   if (!blog) {
     return (
