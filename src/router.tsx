@@ -5,7 +5,8 @@ import Home from './pages/Home';
 import Blogs from './pages/Blogs';
 import BlogDetails from './pages/BlogDetails';
 // import Tools from './pages/Tools';
-// import ToolDetails from './pages/ToolDetails';
+import ToolList from './pages/ToolList';
+import FluidSimulation from './pages/Eulerian';
 
 const AppRouter: React.FC = () => (
   <Router>
@@ -14,8 +15,9 @@ const AppRouter: React.FC = () => (
       {/* <Route path="/about" element={<About />} /> */}
       <Route path="/blogs" element={<Blogs />} />
       <Route path="/blogs/:id" element={<BlogDetails />} />
-      {/* <Route path="/tools" element={<Tools />} />
-      <Route path="/tools/:id" element={<ToolDetails />} /> */}
+      {/* <Route path="/tools" element={<Tools />} /> */}
+      <Route path="/tools" element={<ToolList />} />
+      <Route path="/tools/fluid-simulation" element={<FluidSimulation />} />
     </Routes>
   </Router>
 );
