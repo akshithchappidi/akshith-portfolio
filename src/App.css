@@ -36,3 +36,39 @@
     transform: rotate(360deg);
   }
 }
+
+
+/* Add this to your CSS file (e.g., App.css) */
+@keyframes moveStars {
+  from { background-position: 0 0; }
+  to { background-position: -1000px 1000px; }
+}
+
+.stars {
+  background: url('https://www.transparenttextures.com/patterns/stardust.png');
+  animation: moveStars 50s linear infinite;
+}
+
+.font-cursive {
+  font-family: 'Brush Script MT', cursive;
+}
+
+.font-comic {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.font-mono {
+  font-family: 'Courier New', monospace;
+}
+
+.text-shadow-md {
+  text-shadow: 2px 2px #000;
+}
+
+.text-shadow {
+  text-shadow: 1px 1px #000;
+}
+
+
+
+

@@ -50,25 +50,64 @@ const Home: React.FC = () => {
 
   return (
     <div>
+      {/* Section 1: Introduction background noise animation.*/}
+      {/* <svg width="0" height="0">
+        <filter id="turbulence">
+          <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="10" seed="0" result="turbulence">
+            <animate attributeName="seed" from="0" to="100" dur="20s" repeatCount="indefinite"/>
+          </feTurbulence>
+          <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="20"/>
+          <feColorMatrix in="turbulence" type="hueRotate" values="0">
+            <animate attributeName="values" from="0" to="360" dur="20s" repeatCount="indefinite"/>
+          </feColorMatrix>
+        </filter>
+      </svg> */}
       {/* Section 1: Introduction */}
-      <section className="bg-black text-white py-12 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-4">Hi, I'm Akshith</h2>
-          <p className="text-2xl mb-6">Let's create solutions that make a difference.</p>
-          <p className="text-lg mb-4">
-            A Computer Science graduate and software engineer with experience in various programming languages and technologies.
-          </p>
-          <p className="text-lg mb-4">
-            <strong>Key skills:</strong> Software development, quantum computing, and machine learning.
-          </p>
-          <p className="text-lg mb-4">
-            Currently, I am a Quantum Software Development Intern at BosonQ PSI, where I'm exploring the quantum realm with a touch of humor and interactivity.
+      {/* <section className="relative text-white py-20 px-10" style={{ background: 'black' }}>
+        <div className="absolute inset-0 w-full h-full" style={{ filter: 'url(#turbulence)', backgroundColor: 'black', opacity: 0.8 }}></div>
+        <div className="relative z-10 bg-black">
+          <h1 className="text-5xl font-bold z-15 text-purple">Hi, I'm Akshith</h1>
+          <h2 className="text-3xl mt-2">Let's create solutions that make a difference.</h2>
+          <p className="mt-4 text-xl">
+            A Computer Science graduate and software engineer with experience in various programming languages and technologies. 
+            <br />
+            works on Software development, quantum computing, and machine learning. 
+            <br />
+            Currently a Quantum Software Development Intern at BosonQ PSI.
           </p>
         </div>
-      </section>
+      </section> */}
+    <section className="relative text-white py-20 px-10 bg-black">
+      <svg width="0" height="0">
+        <filter id="turbulence">
+          <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="10" seed="0" result="turbulence">
+            <animate attributeName="seed" from="0" to="100" dur="20s" repeatCount="indefinite" />
+          </feTurbulence>
+          <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="20" />
+          <feColorMatrix in="turbulence" type="hueRotate" values="0">
+            <animate attributeName="values" from="0" to="360" dur="20s" repeatCount="indefinite" />
+          </feColorMatrix>
+        </filter>
+      </svg>
+
+      <div
+        className="absolute inset-0 w-full h-full stars"
+        style={{ filter: 'url(#turbulence)', backgroundColor: 'black', opacity: 0.8 }}
+      ></div>
+      <div className="relative bg-black p-10 rounded-lg">
+        <h1 className="text-5xl font-bold text-pink-500 font-cursive text-shadow-md">Hi, I'm Akshith</h1>
+        <h2 className="text-3xl mt-2 text-lime-400 font-comic text-shadow">Building solutions that make a difference.</h2>
+        <p className="mt-4 text-xl text-cyan-400 font-mono leading-relaxed">
+        Tech wizard by day, quantum dreamer by night! I craft websites, teach machines, and dabble in quantum mysteries at BosonQ PSI. 
+        <br></br>When not decoding the universe, I'm probably lost in sci-fi realms or chasing the next big idea.
+        <br></br>Ready to sprinkle some digital stardust and make the impossible possible?
+        
+        </p>
+      </div>
+    </section>
 
       {/* Section 2: News Scroll using react-slick */}
-      <section className="bg-white py-8 px-4">
+      <section className="bg-white py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold mb-4 text-red-600">Latest Achievements</h2>
           <Slider {...sliderSettings}>
@@ -93,6 +132,8 @@ const Home: React.FC = () => {
               <ul className="text-lg list-disc pl-4">
                 <li>ISOC member</li>
                 <li>4-star coder at Codechef</li>
+                <li>IEEE BIT CS Student branch General secretary</li>
+                <li>Gate Qualified AIR -800</li>
                 {/* Add more bullet points as needed */}
               </ul>
             </div>

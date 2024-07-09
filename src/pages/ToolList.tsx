@@ -1,10 +1,10 @@
 import React from 'react';
 import ToolCard from '../components/ToolCard';
-
+import fluidImage from '../assets/fluid_simulation.png'
 const tools = [
   {
     id: '1',
-    image: 'path_to_your_image.jpg', // Add the path to your tool image
+    image: '/fluid_simulation.png', // Add the path to your tool image
     title: 'Fluid Simulation',
     description: 'A fluid simulation tool for visualizing fluid dynamics.',
     link: '/tools/fluid-simulation', // The route for your Fluid Simulation tool
@@ -14,7 +14,7 @@ const tools = [
 
 const ToolList: React.FC = () => {
   return (
-    <div className="container mx-auto my-8">
+    <div className="container mx-auto my-8 p-8">
       <h2 className="text-3xl font-bold text-center mb-8">Tools</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {tools.map(tool => (

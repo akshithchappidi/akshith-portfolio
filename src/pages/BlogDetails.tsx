@@ -26,7 +26,7 @@ const BlogDetails: React.FC = () => {
 
   if (!blog) {
     return (
-      <div className="container mx-auto p-4">
+      <div className="container mx-auto p-8">
         <h1>Blog not found</h1>
       </div>
     );
